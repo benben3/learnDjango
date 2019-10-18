@@ -31,16 +31,21 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'pages.apps.PagesConfig',
-    'quotes.apps.QuotesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # need to include "blog" app
+
+    #local apps
+    'pages.apps.PagesConfig',
+    'quotes.apps.QuotesConfig',
+    'blog.apps.BlogConfig',
+    'accounts.apps.AccountsConfig',
 ]
+
+TIME_ZONE = 'Asia/Hong_Kong'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -126,3 +131,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'mysite/static'),
 ]
 
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'

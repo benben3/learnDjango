@@ -18,6 +18,16 @@
     <div id="topbanner"><img src="{% static 'front_banner_galaxy.jpg' %}" width="800" height="200" alt=""/></div>    
   </header>
   
+  <div id='login_status' ALIGN=RIGHT>
+  {% if user.is_authenticated %}
+    <p>Hi {{ user.username }}! (You Are Logged In) 
+    <a href="{% url 'logout' %}">Log out</a></p>
+  {% else %}
+    <p>You are not logged in. 
+    <a href="{% url 'login' %}">Log In</a></p>
+  {% endif %}
+  </div>
+
   <aside id="leftsidebar">
     <nav id="nav">
         <ul>
